@@ -28,6 +28,7 @@ services:
       start_period: 30s
     command:
       bash -c "sh snapshotter_autofill.sh && sh init_docker.sh"
+    restart: unless-stopped
   ipfs:
     image: ipfs/kubo:release
     profiles: ["ipfs"]
